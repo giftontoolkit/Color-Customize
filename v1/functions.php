@@ -1,28 +1,3 @@
-# Color Customization
-
-# Version 1 (v1)
-
-- In this version, we introduce below two functions in `functions.php` file. You can see outputs, after applying these two functions.
-- First function has two parts. One is for `background` and other is for `text`.
-- In second function, I accessed `CSS-Class` of the `landing-header.php` and then styled according to `Color-Customization` tab.
-- we used `wp_header()`. This hook is used by WordPress, plugins, and your theme to:
-  - Load CSS stylesheets.
-  - Add inline CSS (like myTM_custom_styles() function).
-  - Include JavaScript scripts.
-  - Add meta tags (e.g., for SEO).
-  - Load other essential header elements.
-
-# Code neccessary in `index.php`
-
-use of wp_header(). So that we can trigger inline-CSS.
-
-```ruby
-<?php wp_head(); ?>
-```
-
-# Code `functions.php` File
-
-```ruby
 <?php
 // Add Theme Customization Options
 function myTM_customize_register($wp_customize) {
@@ -71,13 +46,3 @@ function myTM_custom_styles() {
 add_action('wp_head', 'myTM_custom_styles');
 
 ?>
-```
-
-# Output Before Functions
-
-![Output image before applying functions.php](/images/before_function.jpg)
-
-# Output After Functions
-
-![Output image after applying functions.php 1](/images/after_function_1.jpg)
-![Output image after applying functions.php 2](/images/after_function_2.jpg)
