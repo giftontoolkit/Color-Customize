@@ -25,7 +25,7 @@ use of wp_header(). So that we can trigger inline-CSS.
 ```ruby
 <?php
 // Add Theme Customization Options
-function myTM_customize_register_header_color($wp_customize) {
+function myTM_customize_register($wp_customize) {
     // Backgroud-Color Customization
     // Creating Background-Color
     $wp_customize->add_setting('header_background_color', array(
@@ -52,11 +52,11 @@ function myTM_customize_register_header_color($wp_customize) {
         'settings' => 'text_color',
     )));
 }
-add_action('customize_register', 'myTM_customize_register_header_color');
+add_action('customize_register', 'myTM_customize_register');
 
 
 // Apply Customizations via Inline CSS
-function myTM_custom_styles_header_color() {
+function myTM_custom_styles() {
     ?>
     <style type="text/css">
         .landing-header {
@@ -68,7 +68,7 @@ function myTM_custom_styles_header_color() {
     </style>
     <?php
 }
-add_action('wp_head', 'myTM_custom_styles_header_color');
+add_action('wp_head', 'myTM_custom_styles');
 
 ?>
 ```
@@ -81,3 +81,11 @@ add_action('wp_head', 'myTM_custom_styles_header_color');
 
 ![Output image after applying functions.php 1](/images/after_function_1.jpg)
 ![Output image after applying functions.php 2](/images/after_function_2.jpg)
+
+# Version 2 (v2)
+
+NavBar is implemented for its background and text colors
+
+# Version 3 (v3)
+
+Combine v1 and v2
