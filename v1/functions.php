@@ -1,6 +1,6 @@
 <?php
 // Add Theme Customization Options
-function myTM_customize_register($wp_customize) {
+function myTM_customize_register_header_color($wp_customize) {
     // Backgroud-Color Customization
     // Creating Background-Color
     $wp_customize->add_setting('header_background_color', array(
@@ -27,11 +27,11 @@ function myTM_customize_register($wp_customize) {
         'settings' => 'text_color',
     )));
 }
-add_action('customize_register', 'myTM_customize_register');
+add_action('customize_register', 'myTM_customize_register_header_color');
 
 
 // Apply Customizations via Inline CSS
-function myTM_custom_styles() {
+function myTM_custom_styles_header_color() {
     ?>
     <style type="text/css">
         .landing-header {
@@ -43,6 +43,6 @@ function myTM_custom_styles() {
     </style>
     <?php
 }
-add_action('wp_head', 'myTM_custom_styles');
+add_action('wp_head', 'myTM_custom_styles_header_color');
 
 ?>
